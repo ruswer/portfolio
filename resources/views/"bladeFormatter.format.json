@@ -1,0 +1,4 @@
+"bladeFormatter.format.wrapAttributes": "auto",
+"bladeFormatter.format.sortTailwindcssClasses": true,
+"bladeFormatter.format.indentSize": 4,
+"bladeFormatter.format.commandPath": "/usr/local/bin/php"

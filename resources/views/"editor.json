@@ -1,0 +1,15 @@
+{
+  "editor.formatOnSave": true,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "*.blade.php",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}
