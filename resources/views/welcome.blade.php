@@ -156,7 +156,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Portfolio -->
                 <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="html-css">
-                    <a href="https://github.com/username/portfolio" target="_blank" class="block">
+                    <a href="https://github.com/ruswer/portfolio.git" target="_blank" class="block">
                         <h4 class="text-2xl font-semibold text-blue-600">Portfolio</h4>
                         <p class="text-gray-700 mt-2">HTML & CSS, TailwindCSS bilan yaratilgan veb-sayt.</p>
                     </a>
@@ -164,25 +164,25 @@
 
                 <!-- Blog System -->
                 <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="php,laravel">
-                    <a href="https://github.com/username/blog-system" target="_blank" class="block">
-                        <h4 class="text-2xl font-semibold text-blue-600">Blog System</h4>
-                        <p class="text-gray-700 mt-2">PHP bilan yozilgan blog tizimi.</p>
+                    <a href="https://github.com/ruswer/finance_tracker.git" target="_blank" class="block">
+                        <h4 class="text-2xl font-semibold text-blue-600">Finance tracker System</h4>
+                        <p class="text-gray-700 mt-2">PHP va Laravel bilan yozilgan moliya boshqaruvi tizimi.</p>
                     </a>
                 </div>
 
                 <!-- Job Portal -->
                 <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="laravel">
-                    <a href="https://github.com/username/job-portal" target="_blank" class="block">
+                    <a href="https://github.com/ruswer/real-estate.git" target="_blank" class="block">
                         <h4 class="text-2xl font-semibold text-blue-600">Real estate Portal</h4>
-                        <p class="text-gray-700 mt-2">Laravel asosida ish e'lonlari platformasi.</p>
+                        <p class="text-gray-700 mt-2">Laravel asosida property e'lonlari platformasi.</p>
                     </a>
                 </div>
 
                 <!-- To-do App -->
-                <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="laravel">
+                <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="php,laravel">
                     <a href="https://github.com/ruswer/todo-list.git" target="_blank" class="block">
                         <h4 class="text-2xl font-semibold text-blue-600">To-do App</h4>
-                        <p class="text-gray-700 mt-2">JavaScript bilan yozilgan vazifalar dasturi.</p>
+                        <p class="text-gray-700 mt-2">Php va Laravel bilan yozilgan vazifalar dasturi.</p>
                     </a>
                 </div>
             </div>
