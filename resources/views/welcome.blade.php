@@ -14,7 +14,7 @@
     <nav class="w-full bg-white shadow-md fixed top-0 left-0 z-10">
         <div class="w-11/12 md:w-4/5 mx-auto flex justify-between items-center py-6">
             <!-- Logo -->
-            <h1 class="text-3xl font-bold text-blue-600">My Portfolio</h1>
+            <h1 class="text-3xl font-bold text-blue-600">{{ __('messages.welcome') }}</h1>
     
             <!-- Hamburger Button (Mobil uchun) -->
             <div class="md:hidden flex items-center">
@@ -27,19 +27,31 @@
     
             <!-- Nav Links (Desktop uchun) -->
             <div class="hidden md:flex flex-wrap justify-center md:justify-end mt-2 md:mt-0 space-x-6">
-                <a href="#" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">About</a>
-                <a href="#skills" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">Skills</a>
-                <a href="#projects" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">Projects</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">Contact</a>
+                <a href="#" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">{{ __('messages.home') }}</a>
+                <a href="#skills" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">{{ __('messages.skills') }}</a>
+                <a href="#projects" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">{{ __('messages.projects') }}</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300">{{ __('messages.contact') }}</a>
+            </div>
+            <!-- Language Switcher -->
+            <div class="relative">
+                <button id="languageDropdownButton" class="text-gray-700 hover:text-blue-500 text-xl font-semibold transition-all duration-300 focus:outline-none">
+                    {{ strtoupper(app()->getLocale()) }} 
+                    <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+                <div id="languageDropdownMenu" class="absolute right-0 mt-2 w-32 bg-white shadow-lg rounded-lg hidden">
+                    <a href="{{ route('setLocale', 'uz') }}" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white">UZ</a>
+                    <a href="{{ route('setLocale', 'jp') }}" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white">JP</a>
+                    <a href="{{ route('setLocale', 'en') }}" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white">EN</a>
+                </div>
             </div>
         </div>
     
         <!-- Mobile Menu (Initially hidden) -->
         <div id="mobile-menu" class="md:hidden bg-white shadow-md p-4 hidden">
-            <a href="#" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">About</a>
-            <a href="#skills" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">Skills</a>
-            <a href="#projects" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">Projects</a>
-            <a href="#contact" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">Contact</a>
+            <a href="#" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">{{ __('messages.home') }}</a>
+            <a href="#skills" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">{{ __('messages.skills') }}</a>
+            <a href="#projects" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">{{ __('messages.projects') }}</a>
+            <a href="#contact" class="block text-gray-700 py-2 hover:text-blue-500 font-semibold">{{ __('messages.contact') }}</a>
         </div>
     </nav>    
     <!-- End Navbar -->
@@ -59,20 +71,20 @@
                 </div>
                 <!-- Social Links -->
                 <div class="flex space-x-6 mt-6 justify-center md:justify-start">
-                    <a href="#" class="text-gray-600 hover:text-blue-500 text-3xl transition-all duration-300">
+                    <a href="https://www.facebook.com/dRuswer" class="text-gray-600 hover:text-blue-500 text-3xl transition-all duration-300">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 text-3xl transition-all duration-300">
+                    <a href="https://www.instagram.com/doniyoruswer/" class="text-gray-600 hover:text-blue-500 text-3xl transition-all duration-300">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 text-3xl transition-all duration-300">
-                        <i class="fab fa-linkedin"></i>
+                    <a href="https://github.com/ruswer" class="text-gray-600 hover:text-blue-500 text-3xl transition-all duration-300">
+                        <i class="fab fa-github"></i>
                     </a>
                 </div>
             </div>
             <!-- O'ng tomon (Rasm) -->
             <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr1E35If-I2-LP6J90fC8Xl4fH_I0ykNwUb4OxLrtM1-BFvzUmqySJ9GDSC4bE15TdkYI&usqp=CAU" alt="Doniyor Rustamov" class="rounded-full shadow-lg w-48 h-48 md:w-80 md:h-80 object-cover">
+                <img src="../img/image_mys.jpeg" alt="Doniyor Rustamov" class="rounded-full shadow-lg w-48 h-48 md:w-80 md:h-80 object-cover">
             </div>
         </div>
     </header>    
@@ -81,7 +93,7 @@
     <!-- Start #Skills -->
     <section id="skills" class="bg-gray-100 pt-10">
         <!-- Skills Sarlavhasi -->
-        <h3 class="text-4xl font-extrabold text-center mb-8 text-blue-600">Skills</h3>
+        <h3 class="text-4xl font-extrabold text-center mb-8 text-blue-600">{{ __('messages.skills') }}</h3>
       
         <div class="w-4/5 flex flex-wrap justify-between gap-6 mx-auto">
           
@@ -131,7 +143,7 @@
     <!-- Start #My Projects -->
     <section id="projects" class="w-full mx-auto py-16 bg-gray-50 mt-16">
         <div class="w-4/5 mx-auto">
-            <h3 class="text-4xl font-extrabold text-center mb-8 text-blue-600">My Projects</h3>
+            <h3 class="text-4xl font-extrabold text-center mb-8 text-blue-600">{{ __('messages.projects') }}</h3>
             <!-- Filter Tugmalari -->
             <div class="flex flex-wrap justify-center space-x-2 md:space-x-4 mb-6">
                 <button class="filter-btn active bg-blue-500 text-white px-6 py-3 rounded-lg text-lg" data-filter="all">All</button>
@@ -142,24 +154,36 @@
             </div>
             <!-- Loyihalar Ro‘yxati -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portfolio -->
                 <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="html-css">
-                    <h4 class="text-2xl font-semibold text-blue-600">Landing Page</h4>
-                    <p class="text-gray-700 mt-2">HTML & CSS bilan yaratilgan veb-sayt.</p>
+                    <a href="https://github.com/username/portfolio" target="_blank" class="block">
+                        <h4 class="text-2xl font-semibold text-blue-600">Portfolio</h4>
+                        <p class="text-gray-700 mt-2">HTML & CSS, TailwindCSS bilan yaratilgan veb-sayt.</p>
+                    </a>
                 </div>
-    
-                <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="php">
-                    <h4 class="text-2xl font-semibold text-blue-600">Blog System</h4>
-                    <p class="text-gray-700 mt-2">PHP bilan yozilgan blog tizimi.</p>
+
+                <!-- Blog System -->
+                <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="php,laravel">
+                    <a href="https://github.com/username/blog-system" target="_blank" class="block">
+                        <h4 class="text-2xl font-semibold text-blue-600">Blog System</h4>
+                        <p class="text-gray-700 mt-2">PHP bilan yozilgan blog tizimi.</p>
+                    </a>
                 </div>
-    
+
+                <!-- Job Portal -->
                 <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="laravel">
-                    <h4 class="text-2xl font-semibold text-blue-600">Job Portal</h4>
-                    <p class="text-gray-700 mt-2">Laravel asosida ish e'lonlari platformasi.</p>
+                    <a href="https://github.com/username/job-portal" target="_blank" class="block">
+                        <h4 class="text-2xl font-semibold text-blue-600">Real estate Portal</h4>
+                        <p class="text-gray-700 mt-2">Laravel asosida ish e'lonlari platformasi.</p>
+                    </a>
                 </div>
-    
-                <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="javascript">
-                    <h4 class="text-2xl font-semibold text-blue-600">To-do App</h4>
-                    <p class="text-gray-700 mt-2">JavaScript bilan yozilgan vazifalar dasturi.</p>
+
+                <!-- To-do App -->
+                <div class="project bg-white p-6 shadow-md rounded-lg transition-transform duration-300 hover:scale-105" data-category="laravel">
+                    <a href="https://github.com/ruswer/todo-list.git" target="_blank" class="block">
+                        <h4 class="text-2xl font-semibold text-blue-600">To-do App</h4>
+                        <p class="text-gray-700 mt-2">JavaScript bilan yozilgan vazifalar dasturi.</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -168,7 +192,7 @@
     
     <span class="flex items-center py-6">
         <span class="h-px flex-1 bg-gradient-to-r from-gray-400 to-gray-200"></span>
-        <span class="shrink-0 px-4 text-4xl font-semibold text-blue-600">Contact me</span>
+        <span class="shrink-0 px-4 text-4xl font-semibold text-blue-600">{{ __('messages.contact') }}</span>
         <span class="h-px flex-1 bg-gradient-to-l from-gray-400 to-gray-200"></span>
     </span>
     
@@ -178,14 +202,14 @@
             <!-- Chap tomon: Email va manzillar -->
             <div class="md:w-2/3 mb-6 md:mb-0">
                 <h4 class="text-3xl font-bold mb-4">Contact Information</h4>
-                <p class="text-xl text-gray-800 mb-2">Email: example@example.com</p>
-                <p class="text-xl text-gray-800 mb-2">Address: 123 Street Name, City, Country</p>
-                <p class="text-xl text-gray-800 mb-2">Phone: +123 456 7890</p>
+                <p class="text-xl text-gray-800 mb-2">Email: doniyor.ruswer@gmail.com</p>
+                <p class="text-xl text-gray-800 mb-2">Address: 30 Xaqiqat, Muqumiy Pop, Namangan, Uzbekistan</p>
+                <p class="text-xl text-gray-800 mb-2">Phone: +99894 155 5532</p>
             </div>
             
             <!-- O'ng tomon: Form -->
             <div class="md:w-1/3">
-                <form action="{{ route('contact.send') }}" method="POST" class="bg-white p-6 shadow-md rounded">
+                <form action="#" class="bg-white p-6 shadow-md rounded">
                     @csrf
                     <input type="text" name="name" placeholder="Your Name" class="w-full p-3 border mb-4 rounded text-lg" required>
                     <input type="email" name="email" placeholder="Your Email" class="w-full p-3 border mb-4 rounded text-lg" required>
@@ -206,16 +230,13 @@
         <div class="w-4/5 mx-auto text-center">
             <h4 class="text-2xl font-semibold mb-4">Follow Me</h4>
             <div class="flex justify-center space-x-6">
-                <a href="#" class="text-gray-700 hover:text-blue-500">
+                <a href="https://www.facebook.com/dRuswer" class="text-gray-700 hover:text-blue-500">
                     <i class="fab fa-facebook-f text-2xl"></i>
                 </a>
-                <a href="#" class="text-gray-700 hover:text-blue-500">
+                <a href="https://www.instagram.com/doniyoruswer/" class="text-gray-700 hover:text-blue-500">
                     <i class="fab fa-instagram text-2xl"></i>
                 </a>
-                <a href="#" class="text-gray-700 hover:text-blue-500">
-                    <i class="fab fa-linkedin-in text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-700 hover:text-blue-500">
+                <a href="https://github.com/ruswer" class="text-gray-700 hover:text-blue-500">
                     <i class="fab fa-github text-2xl"></i>
                 </a>
             </div>

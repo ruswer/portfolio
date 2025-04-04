@@ -21,6 +21,20 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
+
+    const dropdownButton = document.getElementById('languageDropdownButton');
+    const dropdownMenu = document.getElementById('languageDropdownMenu');
+
+    dropdownButton.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+    });
+
+    // Dropdownni tashqaridan bosilganda yopish
+    document.addEventListener('click', (event) => {
+        if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.add('hidden');
+        }
+    });
 });
 
 // Scroll to top
@@ -55,5 +69,30 @@ document.addEventListener("click", (event) => {
     if (!mobileMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
         mobileMenu.classList.add("hidden");
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projects = document.querySelectorAll('.project');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            projects.forEach(project => {
+                const categories = project.getAttribute('data-category').split(',');
+
+                if (filter === 'all' || categories.includes(filter)) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+
+            // Active classni yangilash
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
 });
 
